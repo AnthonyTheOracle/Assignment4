@@ -4,12 +4,10 @@ Bloodp <- c(103, 87, 32, 42, 59, 109, 78, 205, 125, 176)
 FirstRead <- c("bad", "bad", "bad", "bad", "good", "good", "good", "good", "NA", "bad")
 SecondRead <- c("low", "low", "high", "high", "low", "low", "high", "high", "high", "high")
 FinalDecision <- c("low", "high", "low", "high", "low", "high", "low", "high", "high", "high")
-Patients <- c("P1", "P2", "P3", "P4", "P5", "06", "P7", "P8", "P9", "P10")
+Patients <- c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10")
 
 Observation <- cbind(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision)
 
 Observation.df <- data.frame(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision)
 Observation.df
 
-#side by side boxplot
-#boxplot(mpg~cyl,data=mtcars, main="Car Milage Data",xlab="Number of Cylinders", ylab="Miles Per Gallon")
