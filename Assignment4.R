@@ -37,7 +37,7 @@ hist(Bloodp
      ,main="Blood Pressure and Hospital Visit"
      ,xlab="Blood Pressure"
      ,ylab = "Hospital Visit Frequency"
-     ,col=c("Blue","Red")
+     , col=c("Blue","Red")
      #,breaks=25
      #,xlim = c(32,210)
      #,xaxp=c(32,210,25)
