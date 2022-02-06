@@ -6,15 +6,45 @@ SecondRead <- c("low", "low", "high", "high", "low", "low", "high", "high", "hig
 FinalDecision <- c("low", "high", "low", "high", "low", "high", "low", "high", "high", "high")
 Patients <- c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10")
 
-Observation <- cbind(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision)
 
-Observation.df <- data.frame(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision)
-Observation.df
+Observation.df <- na.omit(data.frame(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision))
+Observation.df <-na.omit(Observation.df$FirstRead)
 
-#side by side boxplot
-#require(ggplot2)
-boxplot(Bloodp~FinalDecision, ylab="Blood Pressure", main="Boxplot of Blood pressure", xlab="MD Rating", las=1)
 
-hist(Observation.df$Freq)
+BoxFirstRead <-boxplot(Bloodp~FirstRead
+                       ,main="General Doctor Assessment"
+                       ,col=c("Blue","Red") 
+                       ,ylab="Blood Pressure"
+                       ,xlab="First Assessment"
+                       ,las=1
+                       ,na.rm=TRUE)
+
+BoxFirstRead <-boxplot(Bloodp~SecondRead
+                       ,main="External Doctor Assessment"
+                       ,col=c("Blue","Red")
+                       ,ylab="Blood Pressure"
+                       ,xlab="Second Assessment"
+                       ,las=1
+                       ,na.rm=TRUE)
+
+BoxFinalDecision <-boxplot(Bloodp~FinalDecision
+                        ,main="Emergency Unit Decision"
+                        ,col=c("Blue","Red")
+                        ,ylab="Blood Pressure"
+                        ,xlab="MD Rating"
+                        ,las=1)
+
+hist(Bloodp
+     ,main="Blood Pressure and Hospital Visit"
+     ,xlab="Blood Pressure"
+     ,ylab = "Hospital Visit Frequency"
+     ,col=c("Blue","Red")
+     #,breaks=25
+     #,xlim = c(32,210)
+     #,xaxp=c(32,210,25)
+     #,ylim=c(0,1)
+     #,yaxp=c(0,1,10)
+     )
+abline(h=seq(0,3,0.5), col="gray", lty="dotted" )
 
 
