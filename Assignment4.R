@@ -34,7 +34,7 @@ BoxFinalDecision <-boxplot(Bloodp~FinalDecision
                         ,las=1)
 
 hist(Bloodp
-     ,main="Blood Pressure and Hospital Visit"
+     ,main="Blood Pressure By Hospital Visit"
      ,xlab="Blood Pressure"
      ,ylab = "Hospital Visit Frequency"
      , col=c("Blue","Red")
