@@ -11,3 +11,10 @@ Observation <- cbind(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecisio
 Observation.df <- data.frame(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision)
 Observation.df
 
+#side by side boxplot
+#require(ggplot2)
+boxplot(Bloodp~FinalDecision, ylab="Blood Pressure", main="Boxplot of Blood pressure", xlab="MD Rating", las=1)
+
+hist(Observation.df$Freq)
+
+
