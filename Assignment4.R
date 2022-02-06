@@ -8,30 +8,29 @@ Patients <- c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10")
 
 
 Observation.df <- na.omit(data.frame(Patients, Freq, Bloodp, FirstRead, SecondRead, FinalDecision))
-Observation.df <-na.omit(Observation.df$FirstRead)
-
+Observation.df
 
 BoxFirstRead <-boxplot(Bloodp~FirstRead
                        ,main="General Doctor Assessment"
-                       ,col=c("Blue","Red") 
                        ,ylab="Blood Pressure"
                        ,xlab="First Assessment"
                        ,las=1
+                       ,col=c("Blue","Red") 
                        ,na.rm=TRUE)
 
 BoxFirstRead <-boxplot(Bloodp~SecondRead
                        ,main="External Doctor Assessment"
-                       ,col=c("Blue","Red")
                        ,ylab="Blood Pressure"
                        ,xlab="Second Assessment"
                        ,las=1
+                       ,col=c("Blue","Red") 
                        ,na.rm=TRUE)
 
 BoxFinalDecision <-boxplot(Bloodp~FinalDecision
                         ,main="Emergency Unit Decision"
-                        ,col=c("Blue","Red")
                         ,ylab="Blood Pressure"
                         ,xlab="MD Rating"
+                        ,col=c("Blue","Red") 
                         ,las=1)
 
 hist(Bloodp
