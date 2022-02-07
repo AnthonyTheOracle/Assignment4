@@ -18,7 +18,7 @@ BoxFirstRead <-boxplot(Bloodp~FirstRead
                        ,col=c("Blue","Red") 
                        ,na.rm=TRUE)
 
-BoxFirstRead <-boxplot(Bloodp~SecondRead
+BoxSecondRead <-boxplot(Bloodp~SecondRead
                        ,main="External Doctor Assessment"
                        ,ylab="Blood Pressure"
                        ,xlab="Second Assessment"
